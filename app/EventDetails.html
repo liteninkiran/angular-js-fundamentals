@@ -55,12 +55,14 @@
 
                 <h3>Sessions</h3>
 
-                <select ng-model="sortOrder" class="input-small">
+                <label for="order-by">Order By</label>
+                <select ng-model="sortOrder" class="input-small" id="order-by" name="order-by">
                     <option value="name">Name</option>
                     <option value="-upVoteCount">Votes</option>
                 </select>
 
-                <select ng-model="query.level" class="input-medium">
+                <label for="level-filter">Level</label>
+                <select ng-model="query.level" class="input-medium" id="level-filter" name="level-filter">
                     <option value="">All</option>
                     <option value="introductory">Introductory</option>
                     <option value="intermediate">Intermediate</option>
@@ -69,7 +71,7 @@
 
                 <ul class="thumbnails">
 
-                    <li ng-repeat="session in event.sessions | orderBy : sortOrder | limitTo : 2 | filter : query">
+                    <li ng-repeat="session in event.sessions | orderBy : sortOrder | limitTo : 10 | filter : query">
 
                         <div class="row session">
 
@@ -103,7 +105,7 @@
                                 <h6 style="margin-top:-10px;">{{ session.creatorName }}</h6>
 
                                 <!-- Duration -->
-                                <span>Duration: {{ session.duration }}</span>
+                                <span>Duration: {{ session.duration | durations }}</span><br>
 
                                 <!-- Level -->
                                 <span>Level: {{ session.level }}</span>
@@ -130,6 +132,7 @@
         <script src="/lib/angular/angular-sanitize.js"></script>
         <script src="/js/app.js"></script>
         <script src="/js/controllers/EventController.js"></script>
+        <script src="/js/filters.js"></script>
 
     </body>
 
