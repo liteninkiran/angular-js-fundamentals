@@ -6,6 +6,8 @@ eventsApp.controller('EventController', function EventController($scope) {
     $scope.boolValue = false;
     $scope.mystyle = { color: 'red' };
     $scope.myclass = 'title-color';
+    $scope.buttonDisabled = false;
+    $scope.buttonText = 'Click to Disable Me';
     $scope.event = {
         name: 'Angular Boot Camp',
         date: '01/01/2013',
@@ -51,6 +53,11 @@ eventsApp.controller('EventController', function EventController($scope) {
 
     $scope.downVoteSession = function(session) {
         session.upVoteCount--;
+    };
+
+    $scope.buttonClick = function() {
+        $scope.buttonDisabled = !$scope.buttonDisabled;
+        $scope.buttonText = $scope.buttonDisabled ? 'Aw, you disabled me :(' : 'Click to Disable Me';
     };
 
 });
