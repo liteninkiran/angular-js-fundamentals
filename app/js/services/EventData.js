@@ -1,13 +1,7 @@
-eventsApp.factory('eventData', function($http, $log) {
+eventsApp.factory('eventData', function($http) {
     return {
-        getEvent: function(successCb) {
-            $http({ method: 'GET', url: 'data/event/1' }).
-            success(function(data, status, headers, config) {
-                successCb(data);
-            }).
-            error(function(data, status, headers, config) {
-                $log.warning(data, status, headers, config);
-            });
+        getEvent: function() {
+            return $http({ method: 'GET', url: 'data/event/1' });
         }
     }
 });
