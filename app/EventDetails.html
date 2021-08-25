@@ -29,6 +29,8 @@
 
                 <img ng-src="{{ event.imageUrl }}" alt="{{ event.name }}">
 
+                <button type="button" class="btn btn-primary" ng-click="scrollToSession()">Scroll</button>
+
                 <div class="row">
                     <div class="span3">
                         <div><strong>Date: </strong> {{ event.date | date:'dd/MM/yyyy' }}</div>
@@ -64,7 +66,7 @@
 
                 <ul class="thumbnails">
 
-                    <li ng-repeat="session in event.sessions | orderBy : sortOrder | limitTo : 10 | filter : query">
+                    <li ng-repeat="session in event.sessions | orderBy : sortOrder | limitTo : 10 | filter : query" class="span11" id="session{{ session.id }}">
 
                         <div class="row session">
 
