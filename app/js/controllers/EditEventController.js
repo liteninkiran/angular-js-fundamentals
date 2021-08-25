@@ -3,7 +3,6 @@
 eventsApp.controller('EditEventController', function EditEventController($scope, eventData) {
 
     $scope.saveEvent = function(event, newEventForm) {
-        console.log(newEventForm);
         if(newEventForm.$valid) {
             eventData.save(event)
                 .$promise
