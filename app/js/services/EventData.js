@@ -1,3 +1,5 @@
+'use strinct';
+
 eventsApp.factory('eventData', function($resource) {
     var resource = $resource('data/event/:id', { id: '@id' });
     return {

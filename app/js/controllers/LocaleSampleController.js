@@ -6,4 +6,6 @@ eventsApp.controller('LocaleSampleController', function LocaleSampleController($
     $scope.shortDate = $locale.DATETIME_FORMATS.shortDate;
     $scope.longDate = $locale.DATETIME_FORMATS.fullDate;
 
+    throw { message: 'Error message' };
+
 });
