@@ -10,6 +10,7 @@ eventsApp.controller('CookieStoreSampleController', function CookieStoreSampleCo
 
     $scope.getEventFromCookie = function() {
         console.log($cookieStore.get('event'));
+        alert('Check the console');
     };
     
     $scope.removeEventCookie = function() {
