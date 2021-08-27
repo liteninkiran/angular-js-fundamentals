@@ -1,9 +1,9 @@
 'use strict';
 
-eventsApp.controller('EventController', function EventController($scope, eventData, $anchorScroll) {
+eventsApp.controller('EventController', function EventController($scope, eventData, $anchorScroll, $routeParams) {
 
     $scope.sortOrder = '-upVoteCount';
-    eventData.getEvent()
+    eventData.getEvent($routeParams.eventId)
         .$promise
         .then(function(event) { $scope.event = event; })
         .catch(function(response) { console.log(response); });
