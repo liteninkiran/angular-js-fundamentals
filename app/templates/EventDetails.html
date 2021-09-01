@@ -49,19 +49,23 @@
                 <div class="well span9">
 
                     <!-- Name -->
-                    <h4 class="well-title">{{ session.name }}</h4>
+                    <!-- <h4 class="well-title">{{ session.name }}</h4> -->
 
-                    <!-- Creator -->
-                    <h6 style="margin-top:-10px;">{{ session.creatorName }}</h6>
+                    <collapsible title="{{ session.name }}">
 
-                    <!-- Duration -->
-                    <span>Duration: {{ session.duration | durations }}</span><br>
+                        <!-- Creator -->
+                        <h6 style="margin-top:-10px;">{{ session.creatorName }}</h6>
 
-                    <!-- Level -->
-                    <span>Level: {{ session.level }}</span>
+                        <!-- Duration -->
+                        <span>Duration: {{ session.duration | durations }}</span><br>
 
-                    <!-- Abstract -->
-                    <p>{{ session.abstract }}</p>
+                        <!-- Level -->
+                        <span>Level: {{ session.level }}</span>
+
+                        <!-- Abstract -->
+                        <p>{{ session.abstract }}</p>
+
+                    </collapsible>
 
                 </div>
 

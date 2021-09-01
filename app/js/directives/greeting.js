@@ -5,6 +5,7 @@ eventsApp
         return {
             restrict: 'E',
             replace: true,
+            priority: 1,
             transclude: true,
             template: "<div><button class='btn' ng-click='sayHello()'>Say Hello</button><div ng-transclude></div></div>",
             controller: function GreetingController($scope) {
@@ -21,6 +22,7 @@ eventsApp
     .directive('finnish', function() {
         return {
             restrict: 'A',
+            priority: 1,
             require: '^greeting',
             link: function(scope, element, attrs, controller) {
                 controller.addGreeting('hei');
@@ -30,6 +32,7 @@ eventsApp
     .directive('hindi', function() {
         return {
             restrict: 'A',
+            priority: 2,
             require: '^greeting',
             link: function(scope, element, attrs, controller) {
                 controller.addGreeting('namaste')
