@@ -18,6 +18,11 @@ var eventsApp = angular.module('eventsApp', modules)
             foo: 'bar',
             templateUrl: 'templates/EventDetails.html',
             controller: 'EventController',
+            resolve: {
+                event: function($route, eventData) {
+                    return eventData.getEvent($route.current.pathParams.eventId).$promise;
+                },
+            },
         });
 
         $routeProvider.otherwise({ redirectTo: '/events' });

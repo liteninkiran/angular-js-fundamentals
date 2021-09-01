@@ -3,7 +3,7 @@
 eventsApp.controller('EventController', function EventController($scope, eventData, $anchorScroll, $routeParams, $route) {
 
     $scope.sortOrder = '-upVoteCount';
-    $scope.event = eventData.getEvent($routeParams.eventId);
+    $scope.event = $route.current.locals.event;
     $scope.reload = function() {
         $route.reload();
     };
