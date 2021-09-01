@@ -2,8 +2,8 @@
 
 eventsApp.controller('MainMenuController', function MainMenuController($scope, $location) {
 
-    // Exmaple URL:
-    // http://localhost:8000/newEvent?foo=bar&eventId=2#qux
+/*
+    Exmaple URL: http://localhost:8000/newEvent?foo=bar&eventId=2#qux
 
     console.log('absUrl   : ', $location.absUrl()   );
     console.log('protocol : ', $location.protocol() );
@@ -14,7 +14,6 @@ eventsApp.controller('MainMenuController', function MainMenuController($scope, $
     console.log('hash     : ', $location.hash()     );
     console.log('url      : ', $location.url()      );
 
-/*
     Output:
 
     absUrl   :  http://localhost:8000/newEvent?foo=bar&eventId=2#qux
