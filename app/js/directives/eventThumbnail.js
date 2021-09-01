@@ -5,5 +5,8 @@ eventsApp.directive('eventThumbnail', function () {
         restrict: 'E',
         replace: true,
         templateUrl: '/templates/directives/eventThumbnail.html',
+        scope: {
+            event: "=event",
+        },
     };
 });
